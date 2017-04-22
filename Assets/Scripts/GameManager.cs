@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
-    public float maxFluff = 100.0f;
+    public static float maxFluff = 100.0f;
     public static float fluffImpactGain = 20.0f;
-    public float pointGain = 5.0f;
+    public float pointGain = 20.0f;
 
 
     private float currentScore = 0;
@@ -19,7 +19,8 @@ public class GameManager : MonoBehaviour {
 
     public static bool started = true;
     public static bool gameOver = false;
-    public static float gameSpeed = 0.4f;
+    public static float gameSpeed = 0.6f;
+    public static float columnSize = 0.95f;
 
 
 	// Use this for initialization
@@ -61,8 +62,12 @@ public class GameManager : MonoBehaviour {
         currentFluff -= fluffImpactGain;
     }
 
-    public static void MergedBunny()
+    public static void HitFluff()
     {
         currentFluff += fluffImpactGain;
+        if (currentFluff > maxFluff)
+        {
+            currentFluff = maxFluff;
+        }
     }
 }

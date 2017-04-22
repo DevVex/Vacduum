@@ -6,7 +6,6 @@ public class CharacterMovement : MonoBehaviour {
 
 
     private int currentPosition = 0;
-    public float moveSize;
     public float stepDelay;
     private float timePassed = 0f;
 
@@ -46,7 +45,7 @@ public class CharacterMovement : MonoBehaviour {
         if(currentPosition < 2)
         {
             currentPosition++;
-            transform.position = new Vector3(transform.position.x + moveSize, transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x + GameManager.columnSize, transform.position.y, transform.position.z);
         }
     }
 
@@ -55,7 +54,7 @@ public class CharacterMovement : MonoBehaviour {
         if (currentPosition > -2)
         {
             currentPosition--;
-            transform.position = new Vector3(transform.position.x - moveSize, transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x - GameManager.columnSize, transform.position.y, transform.position.z);
         }
     }
 
