@@ -20,6 +20,49 @@ public class CharacterMovement : MonoBehaviour {
 
         timePassed += Time.deltaTime;
 
+        if(timePassed >= stepDelay)
+        {
+            if (Input.touchCount == 1)
+            {
+                var touch = Input.touches[0];
+                if (touch.position.x < Screen.width / 2)
+                {
+                    timePassed = 0f;
+                    MoveLeft();
+                }
+                else if (touch.position.x > Screen.width / 2)
+                {
+                    timePassed = 0f;
+                    MoveRight();
+                }
+            }
+
+            if (Input.GetAxisRaw("Horizontal") > 0)
+            {
+                timePassed = 0f;
+                MoveRight();
+            }
+            if (Input.GetAxisRaw("Horizontal") < 0)
+            {
+                timePassed = 0f;
+                MoveLeft();
+            }
+        }
+
+        /*
+        if (Input.touchCount == 1)
+        {
+            var touch = Input.touches[0];
+            if (touch.position.x < Screen.width / 2)
+            {
+                MoveLeft();
+            }
+            else if (touch.position.x > Screen.width / 2)
+            {
+                MoveRight();
+            }
+        }
+
         if (Input.GetAxisRaw("Horizontal") > 0)
         {
             if(timePassed >= stepDelay)
@@ -37,7 +80,7 @@ public class CharacterMovement : MonoBehaviour {
                 MoveLeft();
             }
         }
-
+        */
     }
 
     void MoveRight()

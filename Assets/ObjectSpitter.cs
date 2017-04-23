@@ -21,6 +21,11 @@ public class ObjectSpitter : MonoBehaviour {
     // Update is called once per frame
     void Update () {
 
+        if (!GameManager.started || GameManager.gameOver)
+        {
+            return;
+        }
+
 
         timePassedObject += Time.deltaTime;
         timePassedBunny += Time.deltaTime;

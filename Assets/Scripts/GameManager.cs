@@ -59,6 +59,8 @@ public class GameManager : MonoBehaviour {
 
     public static void HitObject ()
     {
+        CameraShake.Run();
+        Handheld.Vibrate();
         currentFluff -= fluffImpactGain;
     }
 
