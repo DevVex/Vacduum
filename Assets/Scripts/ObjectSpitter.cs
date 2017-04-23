@@ -73,8 +73,6 @@ public class ObjectSpitter : MonoBehaviour {
         GameObject randomObject = GetRandomObject();
         int column = (int) Mathf.Round(Random.Range(-2.0f, 2.0f));
 
-        Debug.Log("column obj: " + column);
-
         Instantiate(randomObject, new Vector3(column * GameManager.columnSize, transform.position.y, 0.0f), Quaternion.identity, null);
     }
 
@@ -82,8 +80,6 @@ public class ObjectSpitter : MonoBehaviour {
     {
         GameObject randomObject = GetRandomBunny();
         int column = (int)Mathf.Round(Random.Range(-2.0f, 2.0f));
-
-        Debug.Log("column bun: " + column);
 
         Instantiate(randomObject, new Vector3(column * GameManager.columnSize, transform.position.y, 0.0f), Quaternion.identity, null);
     }

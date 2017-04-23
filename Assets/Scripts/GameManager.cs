@@ -30,6 +30,8 @@ public class GameManager : MonoBehaviour {
 
     public GameObject gameOverScreen;
 
+    public CharacterMovement characterMovement;
+
 
 	// Use this for initialization
 	void Start () {
@@ -89,6 +91,7 @@ public class GameManager : MonoBehaviour {
 
     public IEnumerator GameOverRoutine()
     {
+        characterMovement.Cling();
         yield return new WaitForSeconds(2);
         gameOverScreen.active = true;
     }

@@ -16,4 +16,14 @@ public class MoveObject : MonoBehaviour {
 
         transform.position = new Vector3(transform.position.x, transform.position.y - (GameManager.gameSpeed * Time.deltaTime * offset), transform.position.z);
 	}
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if(other.tag == "Suck")
+        {
+            Debug.Log("Getting Sucked");
+            transform.position = Vector3.MoveTowards(transform.position, other.gameObject.transform.position, 0.5f);
+        }
+    }
+
 }
