@@ -18,7 +18,6 @@ public class FadeScreen : MonoBehaviour {
 
     void StartScene()
     {
-        Debug.Log("Fading to clear");
         fadeScreen.enabled = true;
         FadeToClear();
        
@@ -32,7 +31,6 @@ public class FadeScreen : MonoBehaviour {
 
     public void LoadScene(int scene)
     {
-        Debug.Log("Load Scene " + scene);
         StartCoroutine("LoadSceneRoutine", scene); 
     }
 

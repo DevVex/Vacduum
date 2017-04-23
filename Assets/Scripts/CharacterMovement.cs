@@ -9,6 +9,9 @@ public class CharacterMovement : MonoBehaviour {
     public float stepDelay;
     private float timePassed = 0f;
 
+    public AudioClip moveSound1;
+    public AudioClip moveSound2;
+
     // Update is called once per frame
     void Update () {
 
@@ -25,12 +28,12 @@ public class CharacterMovement : MonoBehaviour {
             if (Input.touchCount == 1)
             {
                 var touch = Input.touches[0];
-                if (touch.position.x < Screen.width / 2)
+                if (touch.position.x < Screen.width / 2 && touch.position.y < (Screen.height - Screen.height/10))
                 {
                     timePassed = 0f;
                     MoveLeft();
                 }
-                else if (touch.position.x > Screen.width / 2)
+                else if (touch.position.x > Screen.width / 2 && touch.position.y < (Screen.height - Screen.height / 10))
                 {
                     timePassed = 0f;
                     MoveRight();
@@ -56,6 +59,7 @@ public class CharacterMovement : MonoBehaviour {
         {
             currentPosition++;
             transform.position = new Vector3(transform.position.x + GameManager.columnSize, transform.position.y, transform.position.z);
+            SoundManager.instance.RandomizeSfx(moveSound1, moveSound2);
         }
     }
 
@@ -65,6 +69,7 @@ public class CharacterMovement : MonoBehaviour {
         {
             currentPosition--;
             transform.position = new Vector3(transform.position.x - GameManager.columnSize, transform.position.y, transform.position.z);
+            SoundManager.instance.RandomizeSfx(moveSound1, moveSound2);
         }
     }
 
