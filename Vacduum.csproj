@@ -78,16 +78,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\CameraShake.cs" />
-    <Compile Include="Assets\CharacterCollider.cs" />
-    <Compile Include="Assets\FadeScreen.cs" />
-    <Compile Include="Assets\Fading.cs" />
-    <Compile Include="Assets\MoveObject.cs" />
-    <Compile Include="Assets\ObjectDestroyer.cs" />
-    <Compile Include="Assets\ObjectSpitter.cs" />
+    <Compile Include="Assets\GameOverScreen.cs" />
+    <Compile Include="Assets\Scripts\CameraShake.cs" />
+    <Compile Include="Assets\Scripts\CharacterCollider.cs" />
     <Compile Include="Assets\Scripts\CharacterMovement.cs" />
+    <Compile Include="Assets\Scripts\FadeScreen.cs" />
     <Compile Include="Assets\Scripts\FloorRepeater.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\HighScore.cs" />
+    <Compile Include="Assets\Scripts\MoveObject.cs" />
+    <Compile Include="Assets\Scripts\ObjectDestroyer.cs" />
+    <Compile Include="Assets\Scripts\ObjectSpitter.cs" />
+    <Compile Include="Assets\Scripts\Pause.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

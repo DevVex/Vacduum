@@ -48,39 +48,6 @@ public class CharacterMovement : MonoBehaviour {
                 MoveLeft();
             }
         }
-
-        /*
-        if (Input.touchCount == 1)
-        {
-            var touch = Input.touches[0];
-            if (touch.position.x < Screen.width / 2)
-            {
-                MoveLeft();
-            }
-            else if (touch.position.x > Screen.width / 2)
-            {
-                MoveRight();
-            }
-        }
-
-        if (Input.GetAxisRaw("Horizontal") > 0)
-        {
-            if(timePassed >= stepDelay)
-            {
-                timePassed = 0f;
-                MoveRight();
-            }
-        }
-
-        if (Input.GetAxisRaw("Horizontal") < 0)
-        {
-            if (timePassed >= stepDelay)
-            {
-                timePassed = 0f;
-                MoveLeft();
-            }
-        }
-        */
     }
 
     void MoveRight()
