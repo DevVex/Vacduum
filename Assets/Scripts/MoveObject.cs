@@ -5,6 +5,7 @@ using UnityEngine;
 public class MoveObject : MonoBehaviour {
 
     private float offset = 15.0f;
+    public float spaces;
 	
 	// Update is called once per frame
 	void Update () {
@@ -22,7 +23,7 @@ public class MoveObject : MonoBehaviour {
         if(other.tag == "Suck")
         {
             Debug.Log("Getting Sucked");
-            transform.position = Vector3.MoveTowards(transform.position, other.gameObject.transform.position, 0.5f);
+            transform.position = Vector3.MoveTowards(transform.position, other.gameObject.transform.position, 0.2f);
         }
     }
 

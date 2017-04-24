@@ -48,12 +48,26 @@ public class ObjectSpitter : MonoBehaviour {
 
     void SetRandomObjectTime()
     {
-        randomObjectTime = Random.Range(2.0f, 6.0f);
+        if(GameManager.currentScoreInt < 100) {
+            randomObjectTime = Random.Range(1.5f, 4.0f);
+        } else if (GameManager.currentScoreInt < 500)
+        {
+            randomObjectTime = Random.Range(1.5f, 3.0f);
+        }
+        else if (GameManager.currentScoreInt < 1000)
+        {
+            randomObjectTime = Random.Range(1.5f, 2.0f);
+        }
+        else
+        {
+            randomObjectTime = Random.Range(1f, 2.0f);
+        }
+
     }
 
     void SetRandomBunnyTime()
     {
-        randomBunnyTime = Random.Range(5.0f, 10.0f);
+        randomBunnyTime = Random.Range(2.0f, 5.0f);
     }
 
     GameObject GetRandomObject()
